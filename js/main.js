@@ -157,9 +157,9 @@ const galleries = [
             "img/red.jpg",
             "img/black-card.jpeg",
             "img/red-card.jpeg",
-            "img/blue-pink.jpg",
+            "img/blue-pink.JPG",
             "img/blue-sparkle.jpg",
-            "img/kiss.jpg"
+            "img/kiss.JPG"
         ]
     },
     {
@@ -172,7 +172,7 @@ const galleries = [
             "img/x-mas-bear.jpeg",
             "img/x-mas.jpg",
             "img/pink-xmas.jpg",
-            "img/logo-x-mas.jpg"
+            "img/logo-x-mas.JPG"
         ]
     }
 ];
@@ -501,3 +501,4 @@ for (const link of footerSocialObj) {
     footerSocialsText += `<li class="ps-3"><a href="${link.path}"><i class="${link.icon}"></i></a></li>`
 }
 footerSocials.innerHTML = footerSocialsText;
+
