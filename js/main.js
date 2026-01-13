@@ -1,6 +1,6 @@
-//prefiksi
+//prefiksi//prefiksi
 let prefixOffers = "img/offer";
-let prefixService="img/servicebg.jpg"
+let prefixService = "img/servicebg.jpg"
 //objekti za dinamicko kreiranje
 let links = [
     {
@@ -36,6 +36,11 @@ let links = [
     {
         path: "projektnizadatak.pdf",
         text: "Doc",
+        isActive: false
+    },
+    {
+        path: "altair-beauty-zip",
+        text: "Zip",
         isActive: false
     }
 ];
@@ -93,13 +98,9 @@ let navObj = [
         path: "author.html",
         text: "Author",
         isActive: false
-    },
-    {
-        path: "documentation.pdf",
-        text: "Zip",
-        isActive: false
     }
 ];
+
 
 var Services = [
     {
@@ -192,7 +193,7 @@ const footerAboutObj = [
     },
     {
         name: "Download",
-        path: "#form"
+        path: "#altair-beauty-salon.zip"
     }
 ];
 
@@ -200,8 +201,8 @@ const footerAboutObj = [
 
 function makeLi(link) {
     let html = `<a class="nav-link  mx-1 fs-5" href="${link.path}" class="nav-item nav-link ${link.isActive ?
-'active' : ''}">${link.text}</a>`;
- return html
+        'active' : ''}">${link.text}</a>`;
+    return html
 }
 let navList = ""
 for (let link of links) {
@@ -221,7 +222,8 @@ const slideTextArr = ["Loyalty Rewards Program",
 
 window.onload = function () {
 
-   
+
+
 
     var divServices = document.getElementById('services');
 
@@ -254,13 +256,13 @@ window.onload = function () {
         filterBox.innerHTML += `<button class="btn btn-outline-dark ${index === 0 ? "active" : ""}" data-gallery="${g.id}""> ${g.title} </button>`;
 
         galleryContent.innerHTML +=
-        ` <div class="gallery-wrapper ${index !== 0 ? "d-none" : ""}"id="${g.id}">
+            ` <div class="gallery-wrapper ${index !== 0 ? "d-none" : ""}"id="${g.id}">
             <div class="gallery-container d-flex justify-content-center gap-2">
                 ${g.images.map(img => ` <img src="${img}" class="gallery-img" alt="">`).join("")}
             </div>
         </div> `;
     });
-    
+
     filterBox.addEventListener("click", e => {
         if (!e.target.matches("button")) return;
 
@@ -291,13 +293,13 @@ window.onload = function () {
         e.target.classList.remove("active");
     });
 
-
     const form = document.getElementById("apt-form");
     const serviceSelect = document.getElementById("apt-service");
     const successMsg = document.querySelector(".sent-message");
     const errorMsg = document.querySelector(".error-message");
 
-    
+
+
     const services = [
         "Classic Manicure",
         "Gel Manicure",
@@ -315,12 +317,15 @@ window.onload = function () {
         serviceSelect.appendChild(option);
     });
 
-    
+
     const nameRegex = /^[A-Za-z]{2,20}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^\+?[0-9]{7,15}$/;
+    const dateRegex = /^(19|20)\d\d-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+    const timeRegex = /^([01]\d|1[0-8]):[0-5]\d$/;
 
-  
+    ///////////////
+
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         errorMsg.textContent = "";
@@ -345,19 +350,19 @@ window.onload = function () {
             return;
         }
 
-     
+
         if (!emailRegex.test(email)) {
             errorMsg.textContent = "Please enter a valid email address.";
             return;
         }
 
-     
+
         if (!phoneRegex.test(phone)) {
             errorMsg.textContent = "Phone number must contain 7-15 digits.";
             return;
         }
 
-       
+
         if (!date || !time) {
             errorMsg.textContent = "Please select date and time.";
             return;
@@ -380,9 +385,11 @@ window.onload = function () {
             errorMsg.textContent = "Message must be 300 characters or shorter.";
             return;
         }
+        else {
+            successMsg.style.display = "block";
+            form.reset();
+        }
 
-        successMsg.style.display = "block";
-        form.reset();
     });
 
     //preloader
@@ -492,7 +499,8 @@ const footerSocialObj = [{
 {
     icon: "fa-brands fa-youtube",
     path: "https://youtube.com"
-}];
+}
+];
 
 let footerSocials = document.getElementById("footerSocials");
 let footerSocialsText = "";
@@ -501,4 +509,7 @@ for (const link of footerSocialObj) {
     footerSocialsText += `<li class="ps-3"><a href="${link.path}"><i class="${link.icon}"></i></a></li>`
 }
 footerSocials.innerHTML = footerSocialsText;
+
+
+
 
