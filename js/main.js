@@ -39,7 +39,7 @@ let links = [
         isActive: false
     },
     {
-        path: "altair-beauty-zip",
+        path: "altair-beauty-salon.zip",
         text: "Zip",
         isActive: false
     }
@@ -509,6 +509,7 @@ for (const link of footerSocialObj) {
     footerSocialsText += `<li class="ps-3"><a href="${link.path}"><i class="${link.icon}"></i></a></li>`
 }
 footerSocials.innerHTML = footerSocialsText;
+
 
 
 
