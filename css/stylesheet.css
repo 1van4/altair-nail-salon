@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0px !important;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
@@ -399,9 +399,10 @@ h4, mb-4, .why h1 {
     margin-right:10%;
    margin-bottom:3% !important;
     width:90%;
-    height:90%;
+    height:90%; 
+
 }
-.appointment-form label{
+#apt-service{
     display:inline-block;
     margin-bottom:2px !important;
 }
@@ -422,14 +423,22 @@ h4, mb-4, .why h1 {
 }
 #apt-service{
     width:80%;
-    background-color:var(--lightText);
-    background-color:var(--lightText);
+  
+  
 }
     #apt-service option {
         background-color: var(--lightText);
         color: var(--textColor);
     }
-   
+#apt-message {
+    height: 10vh;
+    width:95%;
+}
+#apt-message, #apt-service, #apt-date, #apt-phone, #apt-time, #apt-name,#apt-lastname,#apt-email{
+    background-color:var(--lightText);
+    border: 1px solid var(--textColor);
+    margin-bottom:2px;
+}
     #book-submit:hover{
         background-color:var(--textColor)!important;
     }
@@ -443,17 +452,18 @@ footer a {
 
 #footerSocials li {
     display: inline;
-    text-decoration:none;
-    list-style:none;
-
+    text-decoration: none;
+    list-style: none;
 }
 .error-message {
     color: #c60d0d;
 }
-
+#homelink a{
+    font-size:30px;                                  
+}
 #footerLogo {
-    width: 80%;
-    margin: 0px auto !important;
+    width: 60%;
+    margin: auto !important;
     display: block;
 }
 .footertxt {
@@ -461,7 +471,32 @@ footer a {
 }
 
 
+input, select {
+    width: 70%;
+    padding: 10px 10px;
+}
 
+.fa-brands{
+    margin:auto;
+    margin-top:5px;
+}
+
+label {
+    font-size: 20px;
+ 
+}
+
+.required::after {
+    content: "*";
+    color: #c41204;
+}
+
+#submit {
+    width: 20%;
+    padding: 7px 0px;
+ 
+    margin-left: 40%;
+}
 /*****************/
 /*RESPONSIVE CSS*/
 @media screen and (max-width:993px) {
