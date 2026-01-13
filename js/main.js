@@ -34,7 +34,7 @@ let links = [
         isActive: false
     },
     {
-        path: "projektnizadatak.pdf",
+        path: "Projektnizadatak.pdf",
         text: "Doc",
         isActive: false
     },
@@ -509,6 +509,7 @@ for (const link of footerSocialObj) {
     footerSocialsText += `<li class="ps-3"><a href="${link.path}"><i class="${link.icon}"></i></a></li>`
 }
 footerSocials.innerHTML = footerSocialsText;
+
 
 
 
